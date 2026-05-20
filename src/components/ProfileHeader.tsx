@@ -80,9 +80,9 @@ export function ProfileHeader() {
 
 
         <div className="flex flex-wrap gap-6 items-center">
-          {PROFILE.resumeUrl && PROFILE.resumeUrl !== "#" && (
+          {PROFILE."/resume.pdf" && PROFILE."/resume.pdf" !== "#" && (
             <a 
-              href={PROFILE.resumeUrl}
+              href={PROFILE."/resume.pdf"}
               target="_blank"
               rel="noreferrer"
               className="flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white px-6 py-3 rounded-full font-bold text-xs tracking-widest transition-all hover:scale-105 hover:shadow-[0_15px_40px_-5px_rgba(37,99,235,0.4)] group"
