@@ -109,7 +109,7 @@ export function ProfileHeader() {
                 <SocialLink icon={<MessageCircle size={22} />} href={PROFILE.socials.whatsapp} />
              )}
              {PROFILE.socials.email && (
-                <SocialLink icon={<Mail size={22} />} href={`mailto:${PROFILE.socials.email}`} />
+   <SocialLink icon={<Mail size={22} />} href={`https://mail.google.com/mail/?view=cm&fs=1&to=${PROFILE.socials.email}`} />
              )}
           </div>
         </div>
