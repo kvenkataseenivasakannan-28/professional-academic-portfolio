@@ -13,7 +13,7 @@ export function Footer() {
       <div className="flex flex-col md:flex-row justify-between items-center gap-6">
         <div className="flex flex-col md:flex-row gap-4 items-center opacity-30 dark:opacity-40 font-mono text-[10px] uppercase tracking-widest dark:text-white">
           <p>© {new Date().getFullYear()} {PROFILE.name}</p>
-          <p>Built for Academic Research Excellence</p>
+          <p>Designed and Built by Venkata Seenivasa K</p>
         </div>
 
         <div className="flex items-center gap-5">
