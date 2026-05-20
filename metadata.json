@@ -1,0 +1,8 @@
+{
+  "name": "Professional Academic Portfolio",
+  "description": "A polished, formal portfolio website for showcasing educational background, certificates, events, and professional achievements.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
