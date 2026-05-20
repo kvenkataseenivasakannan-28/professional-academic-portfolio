@@ -6,15 +6,7 @@
 import { motion } from "motion/react";
 import { PROFILE } from "../constants";
 import { Github, Linkedin, Twitter, Mail, GraduationCap, Globe, Instagram, MessageCircle, Download } from "lucide-react";
-export const PROFILE: Profile = {
-  name: "Venkata Seenivasa K",
-  pronouns: "(he/him)",
-  title: "MBA Student • Digital Marketer • Canva Designer • AI Web Developer",
-  company: "Solamalai College of Engineering",
-  about: "Passionate about blending creativity, business strategy, and AI-powered technology to build modern digital experiences, smart automation solutions, and impactful brand identities.",
-  socials: {
-    email: "kvenkataseenivasakannan@gmail.com",
-    // ... leave the rest of your socials exactly as they are
+
 export function ProfileHeader() {
   return (
     <section className="relative flex flex-col lg:flex-row items-center gap-16 pt-40 pb-24 px-8 lg:px-32 bg-[#050B18] text-white min-h-[90vh] overflow-hidden" id="about">
@@ -117,7 +109,7 @@ export function ProfileHeader() {
                 <SocialLink icon={<MessageCircle size={22} />} href={PROFILE.socials.whatsapp} />
              )}
              {PROFILE.socials.email && (
-                <SocialLink icon={<Mail size={22} />} href={`mailto:${PROFILE.socials.email}`} />
+                <SocialLink icon={<Mail size={22} />} href={`https://mail.google.com/mail/?view=cm&fs=1&to=${PROFILE.socials.email}`} />
              )}
           </div>
         </div>
