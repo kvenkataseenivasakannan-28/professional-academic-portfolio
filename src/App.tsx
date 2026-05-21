@@ -14,6 +14,9 @@ import { AchievementsSection } from "./components/AchievementsSection";
 import { Footer } from "./components/Footer";
 import { ThemeProvider } from "./components/ThemeProvider";
 
+// 1. Import Vercel Analytics specifically for React/Vite
+import { Analytics } from "@vercel/analytics/react";
+
 export default function App() {
   return (
     <ThemeProvider>
@@ -34,19 +37,10 @@ export default function App() {
           <Footer />
         </div>
       </div>
+      
+      {/* 2. Add the Analytics component here */}
+      <Analytics />
+      
     </ThemeProvider>
   );
 }
-import type { AppProps } from 'next/app';
-import { Analytics } from '@vercel/analytics/next';
- 
-function MyApp({ Component, pageProps }: AppProps) {
-  return (
-    <>
-      <Component {...pageProps} />
-      <Analytics />
-    </>
-  );
-}
- 
-export default MyApp;
