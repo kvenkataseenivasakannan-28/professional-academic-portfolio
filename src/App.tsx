@@ -13,6 +13,7 @@ import { EventsSection } from "./components/EventsSection";
 import { AchievementsSection } from "./components/AchievementsSection";
 import { Footer } from "./components/Footer";
 import { ThemeProvider } from "./components/ThemeProvider";
+import { Analytics } from '@vercel/analytics/react';
 
 export default function App() {
   return (
@@ -34,19 +35,7 @@ export default function App() {
           <Footer />
         </div>
       </div>
+      <Analytics />
     </ThemeProvider>
   );
 }
-import type { AppProps } from 'next/app';
-import { Analytics } from '@vercel/analytics/next';
- 
-function MyApp({ Component, pageProps }: AppProps) {
-  return (
-    <>
-      <Component {...pageProps} />
-      <Analytics />
-    </>
-  );
-}
- 
-export default MyApp;
