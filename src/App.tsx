@@ -11,6 +11,7 @@ import { CertificatesSection } from "./components/CertificatesSection";
 import { ProjectsSection } from "./components/ProjectsSection";
 import { EventsSection } from "./components/EventsSection";
 import { AchievementsSection } from "./components/AchievementsSection";
+import { ContactSection } from "./components/ContactSection";
 import { Footer } from "./components/Footer";
 import { ThemeProvider } from "./components/ThemeProvider";
 
@@ -33,6 +34,7 @@ export default function App() {
             <ProjectsSection />
             <AchievementsSection />
             <CertificatesSection />
+            <ContactSection />
           </main>
           <Footer />
         </div>
