@@ -52,21 +52,39 @@ export function SkillsSection() {
 
               {/* Skills List */}
               <div className="space-y-3">
-                {category.skills.map((skill, skillIndex) => (
-                  <motion.div
-                    key={skill}
-                    initial={{ opacity: 0, x: -10 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.3, delay: categoryIndex * 0.1 + skillIndex * 0.05 }}
-                    className="flex items-center gap-3 group/skill"
-                  >
-                    <div className={`w-2 h-2 rounded-full ${category.color} opacity-0 group-hover/skill:opacity-100 transition-opacity`} />
-                    <span className="text-sm text-gray-300 group-hover/skill:text-gray-100 transition-colors">
-                      {skill}
-                    </span>
-                  </motion.div>
-                ))}
+                {category.skills.map((skill, skillIndex) => {
+                  const isObj = typeof skill !== 'string';
+                  const skillName = isObj ? skill.name : (skill as string);
+                  const level = isObj ? (skill as any).level : undefined;
+                  const note = isObj ? (skill as any).note : undefined;
+
+                  return (
+                    <motion.div
+                      key={skillName}
+                      initial={{ opacity: 0, x: -10 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.3, delay: categoryIndex * 0.1 + skillIndex * 0.05 }}
+                      className="flex items-start gap-3 group/skill"
+                    >
+                      <div className={`w-2 mt-1 h-2 rounded-full ${category.color} opacity-0 group-hover/skill:opacity-100 transition-opacity`} />
+                      <div className="flex-1">
+                        <div className="flex items-center justify-between">
+                          <span className="text-sm text-gray-300 group-hover/skill:text-gray-100 transition-colors">{skillName}</span>
+                          {level !== undefined && <span className="text-xs text-gray-400 ml-4">{level}%</span>}
+                        </div>
+
+                        {level !== undefined && (
+                          <div className="h-1 bg-white/10 rounded-full mt-2 overflow-hidden">
+                            <div className="h-full rounded-full bg-violet-600" style={{ width: `${level}%` }} />
+                          </div>
+                        )}
+
+                        {note && <div className="text-xs text-gray-500 mt-1">{note}</div>}
+                      </div>
+                    </motion.div>
+                  );
+                })}
               </div>
             </div>
           </motion.div>

@@ -172,7 +172,14 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
     name: "Design & Visual Tools",
     color: "bg-violet-500",
     description: "Professional design software expertise",
-    skills: ["Canva", "Figma", "Adobe Firefly", "Adobe Creative Suite", "Graphic Design", "UI/UX Design"]
+    skills: [
+      { name: "Canva", level: 95, note: "Brand templates & marketing assets" },
+      { name: "Figma", level: 90, note: "UI prototypes & component systems" },
+      { name: "Adobe Firefly", level: 85, note: "AI-assisted creative generation" },
+      { name: "Adobe Creative Suite", level: 88, note: "Photoshop, Illustrator, Premiere Pro" },
+      { name: "Graphic Design", level: 95, note: "Print & digital collateral" },
+      { name: "UI/UX Design", level: 90, note: "User-centered interfaces" }
+    ]
   },
   {
     name: "Digital Marketing",

@@ -60,7 +60,7 @@ export interface SkillCategory {
   name: string;
   color: string;
   description?: string;
-  skills: string[];
+  skills: Array<string | { name: string; level?: number; note?: string }>;
 }
 
 export interface Socials {
