@@ -135,16 +135,6 @@ export function ProjectsSection() {
                 </div>
               )}
               
-              {project.github && (
-                <div className="absolute top-4 right-4 z-20" onClick={(e) => e.stopPropagation()}>
-                  <ProjectAction 
-                    href={project.github} 
-                    icon={Github} 
-                    label="View Source" 
-                  />
-                </div>
-              )}
-              
               <div className="flex flex-col items-center mb-4 relative z-10">
                 <h3 className="text-lg font-bold text-blue-400 uppercase tracking-tight mb-3 transition-colors">
                   {project.title}
@@ -164,13 +154,23 @@ export function ProjectsSection() {
                 {project.description}
               </p>
 
-              <div className="flex flex-wrap justify-center gap-2 mt-auto relative z-10">
+              <div className="flex flex-wrap justify-center gap-2 mt-auto mb-4 relative z-10">
                 {project.tags?.map(tag => (
                   <span key={tag} className="px-2 py-0.5 bg-blue-900/40 text-blue-400 font-mono text-[9px] uppercase tracking-wider rounded border border-blue-400/20">
                     {tag}
                   </span>
                 ))}
               </div>
+
+              {project.github && (
+                <div className="relative z-10" onClick={(e) => e.stopPropagation()}>
+                  <ProjectAction 
+                    href={project.github} 
+                    icon={Github} 
+                    label="View Source" 
+                  />
+                </div>
+              )}
 
 
             </motion.div>
