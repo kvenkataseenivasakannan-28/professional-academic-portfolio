@@ -84,7 +84,6 @@ export const PROJECTS_DATA: Project[] = [
     title: "Face Recognition Attendance System",
     description: "Developed a real-time attendance system using Python and OpenCV. Automated student attendance tracking using facial recognition and stored data directly into a database, reducing manual errors.",
     github: "https://github.com/kvenkataseenivasakannan-28/Face-Recognition-Attendance-System",
-    image: "/face-recognition.webp",
     tags: ["Python", "OpenCV", "AI/ML"]
   }
 ];
