@@ -56,6 +56,13 @@ export interface Skill {
   category: 'Technical' | 'Soft' | 'Other';
 }
 
+export interface SkillCategory {
+  name: string;
+  color: string;
+  description?: string;
+  skills: string[];
+}
+
 export interface Socials {
   email: string;
   phone?: string;

@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Education, Certificate, Event, Achievement, Profile, Skill, Project } from './types';
+import { Education, Certificate, Event, Achievement, Profile, Skill, Project, SkillCategory } from './types';
 
 export const PROFILE: Profile = {
   name: "Venkata Seenivasa K",
@@ -167,13 +167,41 @@ export const ACHIEVEMENTS: Achievement[] = [
   }
 ];
 
-export const SKILLS_DATA: Skill[] = [
-  { name: "Canva, Figma, Adobe Firefly", level: 95, category: 'Technical' },
-  { name: "Visual Design (Flyer, Brochure, Logo)", level: 90, category: 'Technical' },
-  { name: "SEO & Digital Marketing", level: 85, category: 'Technical' },
-  { name: "Python & Video Editing", level: 80, category: 'Technical' },
-  { name: "Attention to Detail", level: 95, category: 'Soft' },
-  { name: "Communication & Teamwork", level: 90, category: 'Soft' },
-  { name: "Creativity & Problem Solving", level: 85, category: 'Soft' },
-  { name: "Quick Learner", level: 90, category: 'Soft' },
+export const SKILL_CATEGORIES: SkillCategory[] = [
+  {
+    name: "Design & Visual Tools",
+    color: "bg-violet-500",
+    description: "Professional design software expertise",
+    skills: ["Canva", "Figma", "Adobe Firefly", "Adobe Creative Suite", "Graphic Design", "UI/UX Design"]
+  },
+  {
+    name: "Digital Marketing",
+    color: "bg-purple-500",
+    description: "Marketing & content strategies",
+    skills: ["SEO Optimization", "Content Marketing", "Social Media Marketing", "Email Marketing", "Google Analytics", "Campaign Management"]
+  },
+  {
+    name: "Video & Media Production",
+    color: "bg-pink-500",
+    description: "Multimedia creation & editing",
+    skills: ["Video Editing", "Motion Graphics", "Audio Engineering", "Video Production", "Thumbnail Design", "Content Creation"]
+  },
+  {
+    name: "Programming & Development",
+    color: "bg-blue-500",
+    description: "Software development skills",
+    skills: ["Python", "JavaScript", "Web Development", "Data Analysis", "API Integration", "Database Design"]
+  },
+  {
+    name: "Professional Competencies",
+    color: "bg-emerald-500",
+    description: "Core soft skills",
+    skills: ["Communication", "Problem Solving", "Teamwork", "Leadership", "Creativity", "Project Management"]
+  },
+  {
+    name: "Business & Analytics",
+    color: "bg-orange-500",
+    description: "Business intelligence tools",
+    skills: ["Data Analytics", "Business Intelligence", "Financial Analysis", "Market Research", "Strategic Planning", "Dashboard Development"]
+  }
 ];
