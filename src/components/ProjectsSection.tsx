@@ -125,6 +125,16 @@ export function ProjectsSection() {
             >
               <div className="absolute inset-0 bg-blue-600/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
               
+              {project.image && (
+                <div className="w-full h-48 mb-4 overflow-hidden rounded-lg relative z-10">
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                </div>
+              )}
+              
               {project.github && (
                 <div className="absolute top-4 right-4 z-20" onClick={(e) => e.stopPropagation()}>
                   <ProjectAction 
