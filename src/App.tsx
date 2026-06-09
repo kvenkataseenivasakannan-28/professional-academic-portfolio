@@ -7,6 +7,7 @@ import { Navbar } from "./components/Navbar";
 import { ProfileHeader } from "./components/ProfileHeader";
 import { EducationSection } from "./components/MainSections";
 import { SkillsSection } from "./components/SkillsSection";
+import { FaceRecognitionSection } from "./components/FaceRecognitionSection";
 import { CertificatesSection } from "./components/CertificatesSection";
 import { ProjectsSection } from "./components/ProjectsSection";
 import { EventsSection } from "./components/EventsSection";
@@ -28,6 +29,7 @@ export default function App() {
           <main>
             <ProfileHeader />
             <SkillsSection />
+            <FaceRecognitionSection />
             <EducationSection />
             <EventsSection />
             <ProjectsSection />
