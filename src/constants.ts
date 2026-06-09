@@ -100,7 +100,72 @@ export const EVENTS: Event[] = [
   }
 ];
 
-export const ACHIEVEMENTS: Achievement[] = [];
+export const ACHIEVEMENTS: Achievement[] = [
+  {
+    id: "a1",
+    title: "Best Disciplined Student Award",
+    date: "2024–2025",
+    category: "Awards",
+    description: "Awarded for outstanding discipline, conduct, and commitment to academic excellence.",
+    tags: ["Discipline", "Excellence"]
+  },
+  {
+    id: "a2",
+    title: "College Day Appreciation Award",
+    date: "2025–2026",
+    category: "Awards",
+    description: "Received appreciation for administrative support and contributions to institutional activities.",
+    tags: ["College", "Leadership"]
+  },
+  {
+    id: "a3",
+    title: "Innovative Project Expo 2025 – Participant",
+    date: "2025",
+    category: "Awards",
+    description: "Presented the Face Recognition Attendance System during the Engineer's Day Innovation Expo at STEM Club, Solamalai College of Engineering.",
+    tags: ["Innovation", "STEM", "Project"]
+  },
+  {
+    id: "a4",
+    title: "Business Quiz 2025 – Participant",
+    date: "2025",
+    category: "Awards",
+    description: "Competed in an intercollegiate business quiz organized by the National Institute of Personnel Management (NIPM) Madurai Chapter.",
+    tags: ["Business", "Competition"]
+  },
+  {
+    id: "a5",
+    title: "Data Analytics Training Program",
+    date: "2026",
+    category: "Awards",
+    description: "Completed a two-day on-campus training in Data Analytics and Business Intelligence at IIM Bangalore through E-Cell IIM Bangalore & Make Intern.",
+    tags: ["Data Analytics", "Training", "IIM"]
+  },
+  {
+    id: "v1",
+    title: "Mega Job Fair 2026 Volunteer",
+    date: "2026",
+    category: "Volunteer & Leadership",
+    description: "Coordinated recruitment activities and supported industry-student engagement throughout the event organized by TNATPO at Solamalai College of Engineering. Commended for dedicated service.",
+    tags: ["Recruitment", "Volunteer", "Leadership"]
+  },
+  {
+    id: "v2",
+    title: "Industry Leadership Connect – HCLTech",
+    date: "2026",
+    category: "Volunteer & Leadership",
+    description: "Contributed to the successful execution of the 3rd Edition Industry Leadership Connect Program in Madurai.",
+    tags: ["Leadership", "Industry", "HCLTech"]
+  },
+  {
+    id: "v3",
+    title: "Karuppu Audio Launch Event Volunteer",
+    date: "2026",
+    category: "Volunteer & Leadership",
+    description: "Appreciated for exceptional contribution and volunteer service during the movie audio launch event at Solamalai College of Engineering.",
+    tags: ["Event", "Volunteer"]
+  }
+];
 
 export const SKILLS_DATA: Skill[] = [
   { name: "Canva, Figma, Adobe Firefly", level: 95, category: 'Technical' },
