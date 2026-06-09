@@ -17,6 +17,8 @@ export function Navbar() {
     { name: "Education", to: "education" },
     { name: "Experience", to: "experience" },
     { name: "Projects", to: "projects" },
+    { name: "Awards", to: "achievements" },
+    { name: "Volunteer & Leadership", to: "achievements" },
     { name: "Certificates", to: "certificates" },
   ];
 
