@@ -24,9 +24,9 @@ export function AchievementsSection() {
     );
   }, []);
 
-  const categoryIcons: Record<string, any> = {
-    "Awards": Trophy,
-    "Volunteer & Leadership": Award,
+  const categoryIcons: Record<string, { icon: any; emoji: string }> = {
+    "Awards": { icon: Trophy, emoji: "🏆" },
+    "Volunteer & Leadership": { icon: Award, emoji: "🤝" },
   };
 
   const categoryColors: Record<string, { bg: string; border: string; text: string; icon: string }> = {
@@ -55,7 +55,7 @@ export function AchievementsSection() {
 
       <div className="w-full space-y-16">
         {Object.entries(groupedAchievements).map(([category, achievements], categoryIndex) => {
-          const Icon = categoryIcons[category] || Trophy;
+          const { icon: Icon, emoji } = categoryIcons[category] || { icon: Trophy, emoji: "🏆" };
           const colors = categoryColors[category];
 
           return (
@@ -68,14 +68,13 @@ export function AchievementsSection() {
               className="w-full"
             >
               {/* Category Header */}
-              <div className="flex items-center gap-3 mb-8">
+              <div className="flex items-center gap-3 mb-8 justify-center">
                 <div className={`p-2 ${colors.bg} rounded-lg border ${colors.border}`}>
                   <Icon size={20} className={colors.icon} />
                 </div>
                 <h2 className={`text-lg font-bold uppercase tracking-wide ${colors.text}`}>
-                  {category}
+                  {emoji} {category}
                 </h2>
-                <div className={`flex-grow h-px ${colors.border} bg-gradient-to-r from-transparent to-transparent`} />
               </div>
 
               {/* Achievement Cards Grid */}
@@ -88,10 +87,10 @@ export function AchievementsSection() {
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }}
                     whileHover={{ y: -5, scale: 1.02 }}
-                    className="bg-white/5 backdrop-blur-2xl rounded-2xl p-6 border border-white/10 shadow-sm hover:shadow-xl hover:bg-white/10 transition-all duration-300 flex flex-col h-full group"
+                    className="bg-white/5 backdrop-blur-2xl rounded-2xl p-6 border border-white/10 shadow-sm hover:shadow-xl hover:bg-white/10 transition-all duration-300 flex flex-col h-full group text-center"
                   >
                     {/* Date Badge */}
-                    <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center justify-center mb-4">
                       <span className="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[10px] font-mono uppercase tracking-wider text-white/60 group-hover:border-white/20 transition-colors">
                         {achievement.date}
                       </span>
@@ -109,7 +108,7 @@ export function AchievementsSection() {
 
                     {/* Tags */}
                     {achievement.tags && achievement.tags.length > 0 && (
-                      <div className="flex flex-wrap gap-2 mt-auto">
+                      <div className="flex flex-wrap gap-2 mt-auto justify-center">
                         {achievement.tags.map((tag) => (
                           <span
                             key={tag}
