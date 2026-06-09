@@ -23,7 +23,7 @@ export const PROFILE: Profile = {
     whatsapp: "https://api.whatsapp.com/send?phone=918248908247"
   },
   image: "/my.png",
-  resumeUrl: "https://drive.google.com/file/d/1w68iGAdEg-YbLfMTnHV-vqQWHqpXOFig/view?usp=drive_link" 
+  resumeUrl: "https://drive.google.com/file/d/1w68iGAdEg-YbLfMTnHV-vqQWHqpXOFig/view?usp=sharing" 
 };
 
 export const EDUCATION_DATA: Education[] = [
