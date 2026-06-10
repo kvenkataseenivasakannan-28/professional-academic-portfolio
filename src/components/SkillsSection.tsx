@@ -3,122 +3,87 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { useState } from "react";
 import { motion } from "motion/react";
 import { SKILL_CATEGORIES } from "../constants";
-import { Zap } from "lucide-react";
 
 export function SkillsSection() {
+  const [activeTab, setActiveTab] = useState(0);
+
   return (
-    <section className="px-8 lg:px-16 py-16 flex flex-col items-center bg-gradient-to-b from-transparent via-violet-950/10 to-transparent" id="skills">
-      {/* Header */}
-      <div className="text-center mb-16 w-full max-w-4xl">
-        <div className="flex items-center justify-center gap-3 mb-6 bg-violet-600/10 border border-violet-500/20 px-6 py-2.5 rounded-full w-fit mx-auto">
-          <div className="p-1 bg-violet-500/20 rounded text-violet-400">
-            <Zap size={18} />
-          </div>
-          <span className="font-bold text-sm text-violet-200">Technical Skills</span>
-        </div>
-        <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-white">
-          Skills & Expertise
-        </h2>
-        <p className="text-gray-400 text-lg">
-          A comprehensive overview of my technical proficiency and professional competencies
-        </p>
-      </div>
-
-      {/* Skills Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl">
-        {SKILL_CATEGORIES.map((category, categoryIndex) => (
-          <motion.div
-            key={category.name}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
-            className="group relative"
-          >
-            <div className="absolute inset-0 bg-gradient-to-br from-violet-600/20 to-purple-600/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur" />
-            <div className="relative h-full backdrop-blur-sm bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-violet-500/30 transition-all duration-300">
-              {/* Category Header */}
-              <div className="mb-6">
-                <div className="flex items-center gap-3 mb-2">
-                  <div className={`w-1 h-6 rounded-full ${category.color}`} />
-                  <h3 className="text-lg font-bold text-white">{category.name}</h3>
-                </div>
-                {category.description && (
-                  <p className="text-sm text-gray-400 ml-4">{category.description}</p>
-                )}
-              </div>
-
-              {/* Skills List */}
-              <div className="space-y-3">
-                {category.skills.map((skill, skillIndex) => {
-                  const isObj = typeof skill !== 'string';
-                  const skillName = isObj ? skill.name : (skill as string);
-                  const level = isObj ? (skill as any).level : undefined;
-                  const note = isObj ? (skill as any).note : undefined;
-
-                  return (
-                    <motion.div
-                      key={skillName}
-                      initial={{ opacity: 0, x: -10 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.3, delay: categoryIndex * 0.1 + skillIndex * 0.05 }}
-                      className="flex items-start gap-3 group/skill"
-                    >
-                      <div className={`w-2 mt-1 h-2 rounded-full ${category.color} opacity-0 group-hover/skill:opacity-100 transition-opacity`} />
-                      <div className="flex-1">
-                        <div className="flex items-center justify-between">
-                          <span className="text-sm text-gray-300 group-hover/skill:text-gray-100 transition-colors">{skillName}</span>
-                          {level !== undefined && <span className="text-xs text-gray-400 ml-4">{level}%</span>}
-                        </div>
-
-                        {level !== undefined && (
-                          <div className="h-1 bg-white/10 rounded-full mt-2 overflow-hidden">
-                            <div className="h-full rounded-full bg-violet-600" style={{ width: `${level}%` }} />
-                          </div>
-                        )}
-
-                        {note && <div className="text-xs text-gray-500 mt-1">{note}</div>}
-                      </div>
-                    </motion.div>
-                  );
-                })}
-              </div>
-            </div>
-          </motion.div>
-        ))}
-      </div>
-
-      {/* Stats Section */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-        className="mt-16 w-full max-w-6xl grid grid-cols-2 md:grid-cols-4 gap-6"
+    <section className="relative py-24 px-8 lg:px-32 bg-gradient-to-b from-[#0a1628] to-[#050B18] text-white" id="skills">
+      {/* Section Header */}
+      <motion.div 
+        initial={{ y: 30, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6 }}
+        className="max-w-3xl mb-16"
       >
-        {[
-          { label: "Skill Categories", value: SKILL_CATEGORIES.length },
-          { label: "Total Skills", value: SKILL_CATEGORIES.reduce((acc, cat) => acc + cat.skills.length, 0) },
-          { label: "Years Experience", value: "3+" },
-          { label: "Expertise Level", value: "Advanced" }
-        ].map((stat, index) => (
-          <motion.div
-            key={stat.label}
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.3, delay: index * 0.1 }}
-            className="text-center p-4 rounded-xl border border-white/10 bg-white/5"
+        <h2 className="text-3xl lg:text-5xl font-black mb-4">Technical Skills</h2>
+        <p className="text-xl text-gray-400">My expertise across various technologies and tools</p>
+      </motion.div>
+
+      {/* Tabs */}
+      <div className="flex flex-wrap gap-2 mb-12 pb-6 border-b border-white/10">
+        {SKILL_CATEGORIES.map((category, idx) => (
+          <button
+            key={idx}
+            onClick={() => setActiveTab(idx)}
+            className={`px-6 py-3 rounded-lg font-bold text-sm transition-all duration-300 ${
+              activeTab === idx
+                ? "bg-blue-600 text-white shadow-lg shadow-blue-500/20"
+                : "bg-white/5 text-gray-400 hover:bg-white/10 border border-white/10"
+            }`}
           >
-            <div className="text-2xl lg:text-3xl font-bold text-violet-400 mb-2">
-              {stat.value}
-            </div>
-            <div className="text-sm text-gray-400">{stat.label}</div>
-          </motion.div>
+            {category.name}
+          </button>
         ))}
+      </div>
+
+      {/* Tab Content */}
+      <motion.div
+        key={activeTab}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3 }}
+      >
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {SKILL_CATEGORIES[activeTab].skills.map((skill, idx) => {
+            const skillName = typeof skill === "string" ? skill : skill.name;
+            const level = typeof skill === "string" ? undefined : skill.level;
+
+            return (
+              <motion.div
+                key={skillName}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.3, delay: idx * 0.05 }}
+                className="group relative p-4 rounded-lg bg-white/5 border border-white/10 hover:border-blue-500/50 transition-all duration-300 hover:bg-blue-600/10"
+              >
+                <div className="flex flex-col items-center text-center">
+                  <div className="text-3xl mb-2">
+                    {SKILL_CATEGORIES[activeTab].skills[idx].icon || "💻"}
+                  </div>
+                  <p className="font-semibold text-sm text-white mb-2">{skillName}</p>
+                  
+                  {level && (
+                    <div className="w-full">
+                      <div className="h-1 bg-white/20 rounded-full overflow-hidden">
+                        <motion.div
+                          initial={{ width: 0 }}
+                          animate={{ width: `${level}%` }}
+                          transition={{ duration: 1, delay: idx * 0.05 }}
+                          className="h-full bg-gradient-to-r from-blue-400 to-cyan-400"
+                        />
+                      </div>
+                      <p className="text-xs text-gray-400 mt-1">{level}%</p>
+                    </div>
+                  )}
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
       </motion.div>
     </section>
   );

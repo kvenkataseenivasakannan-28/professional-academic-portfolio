@@ -5,13 +5,10 @@
 
 import { Navbar } from "./components/Navbar";
 import { ProfileHeader } from "./components/ProfileHeader";
-import { EducationSection } from "./components/MainSections";
-import { SkillsSection } from "./components/SkillsSection";
-import { CertificatesSection } from "./components/CertificatesSection";
 import { ProjectsSection } from "./components/ProjectsSection";
-import { EventsSection } from "./components/EventsSection";
+import { SkillsSection } from "./components/SkillsSection";
 import { AchievementsSection } from "./components/AchievementsSection";
-import { ContactSection } from "./components/ContactSection";
+import { RecommendationsSection } from "./components/RecommendationsSection";
 import { Footer } from "./components/Footer";
 import { ThemeProvider } from "./components/ThemeProvider";
 
@@ -28,15 +25,12 @@ export default function App() {
           </div>
           <main>
             <ProfileHeader />
-            <SkillsSection />
-            <EducationSection />
-            <EventsSection />
             <ProjectsSection />
+            <SkillsSection />
             <AchievementsSection />
-            <CertificatesSection />
-            <ContactSection />
+            <RecommendationsSection />
+            <Footer />
           </main>
-          <Footer />
         </div>
       </div>
       
