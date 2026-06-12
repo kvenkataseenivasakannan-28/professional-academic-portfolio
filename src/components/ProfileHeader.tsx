@@ -6,7 +6,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "motion/react";
 import { PROFILE } from "../constants";
-import { Github, Linkedin, Twitter, Mail, Download, ExternalLink, ArrowRight } from "lucide-react";
+import { Github, Linkedin, Mail, Download, ExternalLink, ArrowRight } from "lucide-react";
 
 export function ProfileHeader() {
   const [activeRoleIndex, setActiveRoleIndex] = useState(0);
@@ -126,7 +126,7 @@ export function ProfileHeader() {
       >
         <div className="relative group">
           {/* Glass Effect Card for Image */}
-          <div className="relative p-4 bg-linear-to-br from-white/10 to-white/5 backdrop-blur-2xl rounded-[3rem] border border-white/10 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.5)] transition-transform duration-700 group-hover:scale-[1.02]">
+          <div className="relative p-4 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-2xl rounded-[3rem] border border-white/10 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.5)] transition-transform duration-700 group-hover:scale-[1.02]">
             <div className="relative w-full max-w-[350px] aspect-[4/5] overflow-hidden rounded-[2.5rem]">
               <img 
                 src={PROFILE.image || "/my.png"} 
@@ -136,7 +136,7 @@ export function ProfileHeader() {
             </div>
             
             {/* Overlay Gradient */}
-            <div className="absolute inset-0 bg-linear-to-t from-[#050B18]/40 to-transparent pointer-events-none rounded-[3rem]" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#050B18]/40 to-transparent pointer-events-none rounded-[3rem]" />
           </div>
           
           {/* Accent decoration */}

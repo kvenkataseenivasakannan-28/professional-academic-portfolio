@@ -34,7 +34,7 @@ export function RecommendationsSection() {
             className="group relative"
           >
             {/* Recommendation Card */}
-            <div className="relative p-8 rounded-2xl bg-linear-to-br from-white/5 to-white/2 border border-white/10 backdrop-blur-sm hover:border-blue-500/30 transition-all duration-300">
+            <div className="relative p-8 rounded-2xl bg-gradient-to-br from-white/5 to-white/2 border border-white/10 backdrop-blur-sm hover:border-blue-500/30 transition-all duration-300">
               {/* Quote Icon */}
               <div className="absolute top-6 right-6 opacity-20 group-hover:opacity-30 transition-opacity">
                 <Quote className="w-12 h-12 text-blue-400" />

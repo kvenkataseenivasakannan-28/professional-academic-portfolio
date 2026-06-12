@@ -206,44 +206,7 @@ export const RECOMMENDATIONS: Recommendation[] = [
   }
 ];
 
-export const SKILL_CATEGORIES: SkillCategory[] = [
-  {
-    name: "Languages",
-    color: "from-blue-600 to-cyan-600",
-    description: "Programming and markup languages",
-    skills: ["Python", "JavaScript", "HTML/CSS", "SQL", "Java", "C++", "R"]
-  },
-  {
-    name: "Tools & Design",
-    color: "from-purple-600 to-pink-600",
-    description: "Design and productivity tools",
-    skills: ["Canva", "Adobe Suite", "Figma", "Microsoft Office", "Google Analytics", "WordPress"]
-  },
-  {
-    name: "Digital Marketing",
-    color: "from-green-600 to-emerald-600",
-    description: "Marketing strategies and platforms",
-    skills: ["Content Marketing", "SEO", "Social Media Marketing", "Email Marketing", "Google Ads", "Facebook Ads"]
-  },
-  {
-    name: "AI/ML Tools",
-    color: "from-orange-600 to-red-600",
-    description: "Artificial intelligence and machine learning",
-    skills: ["ChatGPT", "OpenAI API", "GPT-4", "Prompt Engineering", "Machine Learning Basics", "Data Analysis"]
-  },
-  {
-    name: "Business",
-    color: "from-indigo-600 to-blue-600",
-    description: "Business and management skills",
-    skills: ["Business Strategy", "Project Management", "Data Analysis", "Financial Planning", "Team Leadership"]
-  },
-  {
-    name: "Soft Skills",
-    color: "from-cyan-600 to-blue-600",
-    description: "Professional competencies",
-    skills: ["Communication", "Problem Solving", "Time Management", "Creativity", "Collaboration"]
-  }
-];
+
 
 export const SKILLS: Skill[] = [
   // Languages
@@ -266,7 +229,6 @@ export const SKILLS: Skill[] = [
   { name: "Communication", level: 92, category: "Soft", icon: "💬" },
   { name: "Problem Solving", level: 88, category: "Soft", icon: "🧩" },
   { name: "Creativity", level: 95, category: "Soft", icon: "✨" }
-];
 ];
 
 export const ACHIEVEMENTS: Achievement[] = [

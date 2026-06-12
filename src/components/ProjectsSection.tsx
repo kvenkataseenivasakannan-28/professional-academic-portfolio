@@ -37,13 +37,13 @@ export function ProjectsSection() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               {/* Image Side */}
               <div className={`relative overflow-hidden rounded-2xl ${idx % 2 === 1 ? "lg:order-2" : ""}`}>
-                <div className="relative h-80 bg-linear-to-br from-white/5 to-white/2 border border-white/10 rounded-2xl overflow-hidden">
+                <div className="relative h-80 bg-gradient-to-br from-white/5 to-white/2 border border-white/10 rounded-2xl overflow-hidden">
                   <img
                     src={project.image || "/project-placeholder.jpg"}
                     alt={project.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-linear-to-t from-[#050B18]/60 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#050B18]/60 to-transparent" />
                 </div>
               </div>
 

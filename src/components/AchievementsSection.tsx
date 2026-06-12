@@ -11,8 +11,6 @@ import { Award } from "lucide-react";
 export function AchievementsSection() {
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
 
-  if (!ACHIEVEMENTS_DATA || ACHIEVEMENTS_DATA.length === 0) return null;
-
   // Get unique categories
   const categories = useMemo(() => {
     const cats = new Set(ACHIEVEMENTS_DATA.map(a => a.category));
@@ -24,6 +22,8 @@ export function AchievementsSection() {
     if (!activeCategory) return ACHIEVEMENTS_DATA;
     return ACHIEVEMENTS_DATA.filter(a => a.category === activeCategory);
   }, [activeCategory]);
+
+  if (!ACHIEVEMENTS_DATA || ACHIEVEMENTS_DATA.length === 0) return null;
 
   const getCategoryEmoji = (category: string) => {
     const emojiMap: Record<string, string> = {

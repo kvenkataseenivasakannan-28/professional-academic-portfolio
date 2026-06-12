@@ -94,7 +94,6 @@ export function ContactSection() {
 
     timeoutRef.current = setTimeout(() => {
       // TODO: Wire up contact form backend (e.g., EmailJS, Resend, SendGrid)
-      console.log("Form submitted:", formData);
       
       setIsSubmitting(false);
       setIsSubmitted(true);
@@ -176,7 +175,7 @@ export function ContactSection() {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
               onSubmit={handleSubmit}
-              className="space-y-6 bg-linear-to-br from-white/5 to-white/0 backdrop-blur-xl rounded-3xl p-8 border border-white/10"
+              className="space-y-6 bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-xl rounded-3xl p-8 border border-white/10"
             >
               {/* Name Field */}
               <div className="space-y-2">

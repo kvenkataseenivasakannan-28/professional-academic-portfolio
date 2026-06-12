@@ -26,7 +26,7 @@ export function EventsSection() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.1 }}
-            className="bg-white/5 backdrop-blur-2xl rounded-3xl p-6 border border-white/10 shadow-sm hover:shadow-xl hover:bg-white/10 transition-all duration-500 hover:-translate-y-1 flex flex-col items-center text-center group hover:bg-linear-to-br hover:from-white/10 hover:to-emerald-900/10 hover:border-emerald-400/30 hover:shadow-2xl hover:shadow-emerald-500/20 cursor-default relative overflow-hidden min-w-[280px] max-w-[340px]"
+            className="bg-white/5 backdrop-blur-2xl rounded-3xl p-6 border border-white/10 shadow-sm hover:shadow-xl hover:bg-white/10 transition-all duration-500 hover:-translate-y-1 flex flex-col items-center text-center group hover:bg-gradient-to-br hover:from-white/10 hover:to-emerald-900/10 hover:border-emerald-400/30 hover:shadow-2xl hover:shadow-emerald-500/20 cursor-default relative overflow-hidden min-w-[280px] max-w-[340px]"
           >
             <div className="flex flex-col items-center mb-4">
               <span className="font-sans font-medium text-lg text-emerald-400 mb-2">{event.organization}</span>
