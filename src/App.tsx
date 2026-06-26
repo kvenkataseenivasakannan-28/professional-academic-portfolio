@@ -14,6 +14,8 @@ import { ThemeProvider } from "./components/ThemeProvider";
 
 // 1. Import Vercel Analytics specifically for React/Vite
 import { Analytics } from "@vercel/analytics/react";
+// Import Vercel Speed Insights for React/Vite
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 export default function App() {
   return (
@@ -36,6 +38,9 @@ export default function App() {
       
       {/* 2. Add the Analytics component here */}
       <Analytics />
+      
+      {/* Add Speed Insights component */}
+      <SpeedInsights />
       
     </ThemeProvider>
   );
